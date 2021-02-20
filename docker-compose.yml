@@ -17,9 +17,9 @@ services:
       - ./tengine/certificates:/usr/local/nginx/certificates
 
   prometheus:
-    image: yusufyazici/prometheus-vts:v1
+    image: prom/prometheus
     container_name: prometheus
- 
+
     expose:
       - "9090"
     ports:
@@ -31,12 +31,12 @@ services:
       - tengine
 
   grafana:
-    image: yusufyazici/grafana-vts:v1
+    image: grafana/grafana
     container_name: grafana
 
     ports:
       - "3000:3000"
-    
+
     volumes:
       - ./grafana/data:/var/lib/grafana
     depends_on:
