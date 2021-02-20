@@ -1,0 +1,5 @@
+ FROM yusufyazici/tengine-with-vts:v1
+ WORKDIR /usr/local/nginx
+ COPY . .
+# RUN yarn install --production
+ CMD ["./sbin/nginx", "-g", "daemon off;"]

@@ -1,0 +1,34 @@
+version: '3.5'
+
+services:
+  tengine:
+    #build: ./tengine/
+    image: yusufyazici/tengine-with-vts:v2
+    container_name: tengine
+    expose:
+      - 80
+    ports:
+      - "80:80"
+
+  prometheus:
+    image: yusufyazici/prometheus-vts:v1
+    container_name: prometheus
+ 
+    expose:
+      - "9090"
+    ports:
+      - "9090:9090"
+
+    depends_on:
+      - tengine
+
+  grafana:
+    image: yusufyazici/grafana-vts:v1
+    container_name: grafana
+
+    ports:
+      - "3000:3000"
+
+    depends_on:
+      - tengine
+      - prometheus
