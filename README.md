@@ -1,4 +1,4 @@
-# Trendyol Case2 Service Management
+# Trendyol Case2 (Service Management) Çalışması
 Bu çalışmada her bir servis için ayrı bir docker container kullanılmıştır. 
 Hem container lifecycle yönetiminin kolay olması, hem de bağımlılık gereksinimini sağlamak için docker-compose ile tasarlanmıştır. 
 Tengine, prometheus ve grafana servislerinin her biri ayrı bir container üzerinden hizmet vermektedir. 
@@ -22,5 +22,7 @@ grafana/grafana docker imajı baz alınmış ve visualize edilmesi gerekli olan 
 nginx_vts_upstream_response_seconds metrikleri container 3000 portu üzerinde admin konsola erişilerek yapılmıştır. 
 Home -> Trendyol Dashboard oluşturulmuş ve ilgili metrikleri toplayan iki grafik eklenmiştir. 
 
-Tüm bu değişikliklerin ve zamanla toplanan metrik, veri ve logların kalıcı olması için persistent volume kullanılmış ve ilgili containerlara ait değişen dosyalar lokal sistemdeki klasörlere map edilmiştir.
-Böylece olası container restart edilmesi durumunda veri kaybının önüne geçilmiştir. 
+Tüm bu yapılandırma ayarları ile zamanla toplanan metrik, veri ve logların kalıcı olması için persistent volume kullanılmış ve ilgili containerlara ait değişen dosyalar lokal sistemdeki klasörlere map edilmiştir. Böylece olası container restart edilmesi durumunda veri kaybının önüne geçilmiştir. 
+
+Kurulum :
+
