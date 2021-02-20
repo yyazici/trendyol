@@ -36,8 +36,9 @@ git clone https://github.com/yyazici/trendyol.git
 
 ./startup.sh
 
-tengine reverse proxy ve metrikler:
+tengine reverse proxy :
 https://localhost
+nginx_vts metrikleri :
 http://localhost/status/format/prometheus
 
 prometheus :
